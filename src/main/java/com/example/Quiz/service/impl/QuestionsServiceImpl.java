@@ -37,6 +37,22 @@ public class QuestionsServiceImpl implements QuestionService {
         return questionsRepository.findById(id).get();
     }
 
+    @Override
+    public void saveImage(MultipartFile image, String name) throws IOException {
+        saveProfileImage(image, name);
+    }
+
+    private void saveProfileImage(MultipartFile image, String name) throws IOException {
+        if (image != null){
+            Path userFolder = Paths.get(USER_FOLDER).toAbsolutePath().normalize();
+            if (!Files.exists(userFolder)){
+                Files.createDirectories(userFolder);
+            }
+            Files.deleteIfExists(Paths.get(userFolder + name + DOT + JPG_EXTENSION));
+            Files.copy(image.getInputStream(), userFolder.resolve(name + DOT + JPG_EXTENSION), REPLACE_EXISTING);
+        }
+    }
+
     private String setImageUrl(String number) {
         return ServletUriComponentsBuilder.fromCurrentContextPath().
                 path(QUESTION_IMAGE_PATH + FORWARD_SLASH + number + DOT + JPG_EXTENSION).toUriString();

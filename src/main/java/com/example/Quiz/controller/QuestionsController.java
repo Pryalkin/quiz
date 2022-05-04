@@ -4,7 +4,9 @@ import com.example.Quiz.entity.Questions;
 import com.example.Quiz.service.QuestionService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,6 +14,7 @@ import java.nio.file.Paths;
 
 import static com.example.Quiz.constant.FileConstant.FORWARD_SLASH;
 import static com.example.Quiz.constant.FileConstant.USER_FOLDER;
+import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.IMAGE_JPEG_VALUE;
 
 @RequestMapping("/question")
@@ -21,6 +24,15 @@ import static org.springframework.http.MediaType.IMAGE_JPEG_VALUE;
 public class QuestionsController {
 
     private final QuestionService questionService;
+
+    @PostMapping("/saveImage")
+    public void updateProfileImage(@RequestParam(value = "image") MultipartFile image,
+                                   @RequestParam String name) throws IOException {
+        questionService.saveImage(image, name);
+    }
+
+
+
 
     @GetMapping("/{numberQuestion}")
     public Questions addUser(@PathVariable("numberQuestion") String numberQuestion){
