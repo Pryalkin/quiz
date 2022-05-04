@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/fragment"
+    android:padding="25dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/completeTheGame"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complete the game"
+        android:layout_marginBottom="15dp"/>
+
+    <ImageView
+        android:id="@+id/question_iv"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:gravity="center"
+        tools:src="@tools:sample/avatars" />
+    <TextView
+        android:id="@+id/question"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RadioGroup
+        android:id="@+id/answers"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="25dp">
+        <RadioButton android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RadioGroup>
+    <Button
+        android:id="@+id/buttonHelp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50/50"
+        android:layout_marginBottom="15dp"/>
+    <Button
+        android:id="@+id/buttonHelpFriend"
+        android:layout_gravity="center|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help a friend"
+        android:layout_marginBottom="15dp"
+        />
+
+    <Button
+        android:id="@+id/buttonCallFriend"
+        android:layout_gravity="center|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call a friend"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>
+</ScrollView>
