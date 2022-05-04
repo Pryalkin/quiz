@@ -27,7 +27,6 @@ public class UserController {
 
     @GetMapping("/userResults")
     public ResponseEntity<List<User>> getUserResults(){
-        log.info("Я в этом методе!!!");
         return new ResponseEntity<>(userService.getUserResults(), HttpStatus.OK);
     }
 
