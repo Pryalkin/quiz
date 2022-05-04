@@ -30,26 +30,7 @@ public class QuestionsActivity extends AppCompatActivity {
         ViewPager2 pager = findViewById(R.id.pager);
         FragmentStateAdapter pageAdapter = new MyAdapter(this);
         pager.setUserInputEnabled(false);
-
         pager.setAdapter(pageAdapter);
-        timer();
-    }
-
-    public void timer(){
-        timer = findViewById(R.id.timer);
-        myTimer = new CountDownTimer(60000, 1000) {
-
-            @Override
-            public void onTick(long millisUntilFinished) {
-                timer.setText(Long.toString(millisUntilFinished/1000) + " seconds left");
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        };
-        myTimer.start();
     }
 
 }

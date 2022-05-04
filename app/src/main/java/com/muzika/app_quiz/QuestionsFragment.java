@@ -108,11 +108,6 @@ public class QuestionsFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_question, container, false);
         elementInitialization(view);
         methodForLogic();
-        if (pageNumber < 7) {
-            methodGroupForQuestions();
-        } else {
-            methodForTotalFragment();
-        }
         return view;
     }
 
@@ -135,6 +130,7 @@ public class QuestionsFragment extends Fragment {
         if (pageNumber < 7){
             buttonCompleteTheGame.setVisibility(View.GONE);
             resultText.setVisibility(View.GONE);
+            methodGroupForQuestions();
         }   else {
             buttonHelp.setVisibility(View.GONE);
             buttonHelpFriend.setVisibility(View.GONE);
@@ -143,6 +139,7 @@ public class QuestionsFragment extends Fragment {
             imageView.setVisibility(View.GONE);
             question.setVisibility(View.GONE);
             getActivity().findViewById(R.id.timer).setVisibility(View.GONE);
+            methodForTotalFragment();
         }
         if (btnHelp == 3){
             buttonHelp.setVisibility(View.GONE);

@@ -29,8 +29,6 @@ public class NameDialog extends DialogFragment {
 
     private EditText et;
     private RequestQueue requestQueue;
-    String hello;
-
 
     @NonNull
     @Override
@@ -43,31 +41,15 @@ public class NameDialog extends DialogFragment {
                 .setView(root)
                 .setTitle("Имя игрока")
                 .setPositiveButton("OK", (dialog, which) -> {
-//                    String url = "http://10.0.2.2:8080/authorization/username";
-//                    StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-//                            response -> { }
-//                            ,
-//                            error -> {}
-//                    )
-//                    {
-//                      @Override
-//                        protected Map<String, String> getParams() throws AuthFailureError{
-//                          Map<String, String> params = new HashMap<>();
-//                          params.put("username", et.getText().toString());
-//                          return params;
-//                      }
-//                    };
                     Result.result = 0;
                     Result.username = et.getText().toString();
                     Intent intent = new Intent(getContext(), QuestionsActivity.class);
                     startActivity(intent);
-//                    requestQueue = Volley.newRequestQueue(getContext());
-//                    requestQueue.add(stringRequest);
+
                     Toast.makeText(getActivity(), "Hello " + Result.username, Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("Cancel", null)
                 .create();
-//        LOSUtils.dialog(d);
         return d;
     }
 

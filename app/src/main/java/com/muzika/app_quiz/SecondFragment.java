@@ -97,7 +97,6 @@ public class SecondFragment extends Fragment {
                         try {
                             for (int i=0; i<response.length(); i++){
                                 JSONObject object = response.getJSONObject(i);
-                                Toast.makeText(getActivity(), object.getString("result"), Toast.LENGTH_SHORT).show();
                                 resultAndUsername.append(object.getString("username"));
                                 resultAndUsername.append(": ");
                                 resultAndUsername.append(object.getString("result"));
