@@ -165,7 +165,7 @@ public class QuestionsFragment extends Fragment {
         buttonCompleteTheGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://10.0.2.2:8080/authorization/username";
+                String url = "http://34.116.255.188:8080/authorization/username";
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         response -> { }
                         ,
@@ -188,7 +188,7 @@ public class QuestionsFragment extends Fragment {
     }
 
     private void getQuestion() {
-        String url = "http://10.0.2.2:8080/question/"+pageNumber;
+        String url = "http://34.116.255.188:8080/question/"+pageNumber;
         JsonObjectRequest jsonObject = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -207,7 +207,7 @@ public class QuestionsFragment extends Fragment {
                         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                         StrictMode.setThreadPolicy(policy);
                         try {
-                            URL url = new URL("http://10.0.2.2:8080/question/image/" + pageNumber + ".png");
+                            URL url = new URL("http://34.116.255.188:8080/question/image/" + pageNumber + ".png");
                             Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
                             imageView.setImageBitmap(image);
                         } catch(IOException e) {

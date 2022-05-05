@@ -89,7 +89,7 @@ public class SecondFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
         resultAndUsername = view.findViewById(R.id.usernameAndResult);
         resultAndUsername.setText("");
-        String url = "http://10.0.2.2:8080/authorization/userResults";
+        String url = "http://34.116.255.188:8080/authorization/userResults";
         JsonArrayRequest jsonObject = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
