@@ -22,13 +22,6 @@ public class QuestionsController {
 
     private final QuestionService questionService;
 
-
-    @PostMapping("/saveImage")
-    public void updateProfileImage(@RequestParam(value = "image") MultipartFile image,
-                                   @RequestParam String name) throws IOException {
-        questionService.saveImage(image, name);
-    }
-
     @GetMapping("/{numberQuestion}")
     public Questions addUser(@PathVariable("numberQuestion") String numberQuestion){
         Long numberIdQuestion = Long.parseLong(numberQuestion);
